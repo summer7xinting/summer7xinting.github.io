@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Welcome to UNIX Utilities! | No Name In Module</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Welcome to UNIX Utilities!" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tested Out On MacOS" />
+<meta property="og:description" content="Tested Out On MacOS" />
+<link rel="canonical" href="http://localhost:4000/unix-util-tricks" />
+<meta property="og:url" content="http://localhost:4000/unix-util-tricks" />
+<meta property="og:site_name" content="No Name In Module" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-01-07T00:00:00-08:00" />
+<script type="application/ld+json">
+{"description":"Tested Out On MacOS","@type":"BlogPosting","url":"http://localhost:4000/unix-util-tricks","headline":"Welcome to UNIX Utilities!","dateModified":"2019-01-07T00:00:00-08:00","datePublished":"2019-01-07T00:00:00-08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/unix-util-tricks"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="No Name In Module" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/">No Name In Module</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Welcome to UNIX Utilities!</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-01-07T00:00:00-08:00" itemprop="datePublished">Jan 7, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="tested-out-on-macos">Tested Out On MacOS</h2>
+
+<h2 id="ctrl-family">CTRL Family</h2>
+<h3 id="similar-to-vi-tricks">similar to vi tricks</h3>
+<ul>
+  <li>ctrl + c: interrupt kernel</li>
+  <li>ctrl + u: clear line</li>
+  <li>ctrl + h: backspace</li>
+  <li>ctrl + w: delete a word</li>
+  <li>ctrl + d: EOF</li>
+</ul>
+
+<h2 id="lannetwork">LAN/Network</h2>
+<ul>
+  <li>lpr: printer is a device under /dev/? See more at <a href="http://localhost:631/printers/">port 631</a> and man lpr/cups</li>
+  <li>
+</ul>
+
+<h2 id="admin">Admin</h2>
+<ul>
+  <li>passwd: change password</li>
+  <li>who: list of all running user-terminal pair; finger: list of all users (idle of not)</li>
+  <li>finger + username: find specific user info</li>
+  <li>Note: create user: use either GUI or dscl</li>
+  <li>su: substitute user</li>
+  <li>login:</li>
+  <li>logout: ctrl + d, nothing can be done at this point</li>
+</ul>
+
+<h2 id="file-system">File System</h2>
+<ul>
+  <li>ls: list directory: -halt
+    <ul>
+      <li>-l: read/write/exec -&gt; long format displays file mode, number of links, owner name, group name, number of bytes in the file, abbreviated month, day-of-month file was last modified, hour file last modified, minute file last modified, and the path name.</li>
+      <li>-t: sort by modification date</li>
+      <li>-a: show hidden file (eg .bash_profile)</li>
+      <li>-h: human-readable style</li>
+      <li>-i: show inode</li>
+    </ul>
+  </li>
+  <li>tree: installed by homebrew, list sub-directory structure</li>
+  <li>cat: show content</li>
+  <li>rm: remove file/directory: -rf</li>
+  <li>escape for special characters: ' = “’”</li>
+  <li>cp: copy a path/file to a new path/file (overwrite when the new name exists)</li>
+  <li>mv: move a path/file to a new path/file (overwrite when the new name exists)</li>
+  <li>grep: accepts regex, search the dst file and display all lines containing the pattern</li>
+  <li>head/tail: -n</li>
+  <li>sort: sort a file in order by lines</li>
+  <li>uniq: skip <strong>adjacent</strong> duplicate lines -&gt; used with sort to achieve <strong>uniqueness</strong>
+</li>
+  <li>whereis/which: whereis finds all instances in the path; which gives the first one: the instance used
+    <ul>
+      <li>
+<code class="highlighter-rouge">PATH</code> is determined by the system? How to change it?</li>
+    </ul>
+  </li>
+  <li>compress: tar?
+    <ul>
+      <li>uncompress:</li>
+      <li>cat/zcat</li>
+    </ul>
+  </li>
+  <li>file: determine file type; ls -l: determine file access control</li>
+  <li>chmod: change access control: <code class="highlighter-rouge">chmod ug=rx directory/file-name</code>
+    <ul>
+      <li>4 types of user: <strong>u</strong>ser, <strong>g</strong>roup, <strong>o</strong>thers, <strong>a</strong>ll -&gt; setting u/g/a OR u/g/o is sufficient to cover all users</li>
+      <li>3 types of access: read, write, exec</li>
+      <li>3 types of change: + to add access, - to remove access, = to set</li>
+    </ul>
+  </li>
+  <li>ln: create a link: <code class="highlighter-rouge">ln src targ</code> for hard links and <code class="highlighter-rouge">ln -s src targ</code> for soft links
+    <ul>
+      <li>soft link: symbolic link: a <strong>new</strong> file containing indirect reference to source_file, different inode, dual access, usually smaller in size</li>
+      <li>hard link: two file names, same inode, dual access, same in size</li>
+      <li>hard copy: two files, two inodes, one-way access, same in size</li>
+      <li>check link status: <code class="highlighter-rouge">ls -li</code>
+</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="terminal">Terminal</h2>
+<ul>
+  <li>echo: print to terminal (without re-direction)</li>
+  <li>date</li>
+  <li>man: display online manual(where)</li>
+  <li>talk: current user with established mutual connection</li>
+  <li>write: current user without consent</li>
+  <li>mail: all users (online/offline), check by typing <code class="highlighter-rouge">mail</code>
+</li>
+</ul>
+
+  </div>
+<a class="u-url" href="/unix-util-tricks" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">No Name In Module</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">No Name In Module</li>
+<li><a class="u-email" href="mailto:wangxinting21@gmail.com">wangxinting21@gmail.com</a></li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>我爱人间烟火 <img class="emoji" title=":heart:" alt=":heart:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2764.png" height="20" width="20"></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

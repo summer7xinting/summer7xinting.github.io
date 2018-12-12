@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-14T22:32:21-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">No Name In Module</title><subtitle>我爱人间烟火 :heart:</subtitle><entry><title type="html">Welcome to MacOS!</title><link href="http://localhost:4000/mac-os-tricks" rel="alternate" type="text/html" title="Welcome to MacOS!" /><published>2019-01-14T00:00:00-08:00</published><updated>2019-01-14T00:00:00-08:00</updated><id>http://localhost:4000/MacOS-Cheat-Sheet</id><content type="html" xml:base="http://localhost:4000/mac-os-tricks">&lt;h2 id=&quot;tested-out-on-macos-mojave&quot;&gt;Tested Out On MacOS: Mojave&lt;/h2&gt;
+&lt;p&gt;Read &lt;a href=&quot;https://docstore.mik.ua/orelly/unix3/mac/&quot;&gt;this&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;system-related-info&quot;&gt;System Related Info&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;/: root directory, shared by all users&lt;/li&gt;
+  &lt;li&gt;/etc: configuration files for Unix applications and services &amp;amp; startup scripts&lt;/li&gt;
+  &lt;li&gt;/Library: system-level customization&lt;/li&gt;
+  &lt;li&gt;/System/Library: should not modify&lt;/li&gt;
+  &lt;li&gt;/var: transient or volatile files&lt;/li&gt;
+  &lt;li&gt;/dev: device files
+    &lt;ul&gt;
+      &lt;li&gt;tty: Standard output stream of the current Terminal or remote login&lt;/li&gt;
+      &lt;li&gt;null: redirect output here and it disappears&lt;/li&gt;
+      &lt;li&gt;stdin/stdout?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;user-related-info&quot;&gt;User Related Info&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;~ or /Users/user-name/: home directory, modified by one user&lt;/li&gt;
+  &lt;li&gt;~/Library - user-specific setting, such as Terminal, Messages etc&lt;/li&gt;
+  &lt;li&gt;source .bash_profile OR restart terminal: stores $PATH extension.
+    &lt;ul&gt;
+      &lt;li&gt;If .bash_profile is messed up: $PATH is no longer valid: &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/bin/vi ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;file-system&quot;&gt;File System&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/root-fs.jpg&quot; alt=&quot;root-fs&quot; style=&quot;width:500px;&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;apfs-apple-file-system&quot;&gt;APFS: Apple File System&lt;/h3&gt;
+&lt;p&gt;Read &lt;a href=&quot;https://docstore.mik.ua/orelly/unix3/mac/appa_01.htm#sect1&quot;&gt;this&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;unix-file-system&quot;&gt;Unix File System&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;inodes:&lt;/li&gt;
+  &lt;li&gt;links: a file pointer
+    &lt;ul&gt;
+      &lt;li&gt;Every file in the File System is a “hard link” to the inode Look Up Table?&lt;/li&gt;
+      &lt;li&gt;Hard links are equal file pointers to the same inode. Deleting a file/hardlink will not affect the file if there’s at least one more hard link to the file -&amp;gt; &lt;strong&gt;same inode&lt;/strong&gt;, same accessibility, affect link # in &lt;code class=&quot;highlighter-rouge&quot;&gt;ls -l&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Soft links are &lt;strong&gt;new&lt;/strong&gt; files pointing to the original file. Deleting a softlink will not affect the file -&amp;gt; different inode, same accessibility, doesn’t affect link # in &lt;code class=&quot;highlighter-rouge&quot;&gt;ls -l&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;If all hardlinks are lost: the file is “deleted” and disk space is claimed by the OS. softlinks become invalid: the softlink file still exists but can no longer be used to access anything.&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;hfshfs&quot;&gt;HFS/HFS+&lt;/h3&gt;</content><author><name></name></author><summary type="html">Tested Out On MacOS: Mojave Read this</summary></entry><entry><title type="html">Welcome to UNIX Utilities!</title><link href="http://localhost:4000/unix-util-tricks" rel="alternate" type="text/html" title="Welcome to UNIX Utilities!" /><published>2019-01-07T00:00:00-08:00</published><updated>2019-01-07T00:00:00-08:00</updated><id>http://localhost:4000/UNIX-Utilities-Cheat-Sheet</id><content type="html" xml:base="http://localhost:4000/unix-util-tricks">&lt;h2 id=&quot;tested-out-on-macos&quot;&gt;Tested Out On MacOS&lt;/h2&gt;
+
+&lt;h2 id=&quot;ctrl-family&quot;&gt;CTRL Family&lt;/h2&gt;
+&lt;h3 id=&quot;similar-to-vi-tricks&quot;&gt;similar to vi tricks&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;ctrl + c: interrupt kernel&lt;/li&gt;
+  &lt;li&gt;ctrl + u: clear line&lt;/li&gt;
+  &lt;li&gt;ctrl + h: backspace&lt;/li&gt;
+  &lt;li&gt;ctrl + w: delete a word&lt;/li&gt;
+  &lt;li&gt;ctrl + d: EOF&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;lannetwork&quot;&gt;LAN/Network&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;lpr: printer is a device under /dev/? See more at &lt;a href=&quot;http://localhost:631/printers/&quot;&gt;port 631&lt;/a&gt; and man lpr/cups&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;admin&quot;&gt;Admin&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;passwd: change password&lt;/li&gt;
+  &lt;li&gt;who: list of all running user-terminal pair; finger: list of all users (idle of not)&lt;/li&gt;
+  &lt;li&gt;finger + username: find specific user info&lt;/li&gt;
+  &lt;li&gt;Note: create user: use either GUI or dscl&lt;/li&gt;
+  &lt;li&gt;su: substitute user&lt;/li&gt;
+  &lt;li&gt;login:&lt;/li&gt;
+  &lt;li&gt;logout: ctrl + d, nothing can be done at this point&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;file-system&quot;&gt;File System&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;ls: list directory: -halt
+    &lt;ul&gt;
+      &lt;li&gt;-l: read/write/exec -&amp;gt; long format displays file mode, number of links, owner name, group name, number of bytes in the file, abbreviated month, day-of-month file was last modified, hour file last modified, minute file last modified, and the path name.&lt;/li&gt;
+      &lt;li&gt;-t: sort by modification date&lt;/li&gt;
+      &lt;li&gt;-a: show hidden file (eg .bash_profile)&lt;/li&gt;
+      &lt;li&gt;-h: human-readable style&lt;/li&gt;
+      &lt;li&gt;-i: show inode&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;tree: installed by homebrew, list sub-directory structure&lt;/li&gt;
+  &lt;li&gt;cat: show content&lt;/li&gt;
+  &lt;li&gt;rm: remove file/directory: -rf&lt;/li&gt;
+  &lt;li&gt;escape for special characters: ' = “’”&lt;/li&gt;
+  &lt;li&gt;cp: copy a path/file to a new path/file (overwrite when the new name exists)&lt;/li&gt;
+  &lt;li&gt;mv: move a path/file to a new path/file (overwrite when the new name exists)&lt;/li&gt;
+  &lt;li&gt;grep: accepts regex, search the dst file and display all lines containing the pattern&lt;/li&gt;
+  &lt;li&gt;head/tail: -n&lt;/li&gt;
+  &lt;li&gt;sort: sort a file in order by lines&lt;/li&gt;
+  &lt;li&gt;uniq: skip &lt;strong&gt;adjacent&lt;/strong&gt; duplicate lines -&amp;gt; used with sort to achieve &lt;strong&gt;uniqueness&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;whereis/which: whereis finds all instances in the path; which gives the first one: the instance used
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;PATH&lt;/code&gt; is determined by the system? How to change it?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;compress: tar?
+    &lt;ul&gt;
+      &lt;li&gt;uncompress:&lt;/li&gt;
+      &lt;li&gt;cat/zcat&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;file: determine file type; ls -l: determine file access control&lt;/li&gt;
+  &lt;li&gt;chmod: change access control: &lt;code class=&quot;highlighter-rouge&quot;&gt;chmod ug=rx directory/file-name&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;4 types of user: &lt;strong&gt;u&lt;/strong&gt;ser, &lt;strong&gt;g&lt;/strong&gt;roup, &lt;strong&gt;o&lt;/strong&gt;thers, &lt;strong&gt;a&lt;/strong&gt;ll -&amp;gt; setting u/g/a OR u/g/o is sufficient to cover all users&lt;/li&gt;
+      &lt;li&gt;3 types of access: read, write, exec&lt;/li&gt;
+      &lt;li&gt;3 types of change: + to add access, - to remove access, = to set&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ln: create a link: &lt;code class=&quot;highlighter-rouge&quot;&gt;ln src targ&lt;/code&gt; for hard links and &lt;code class=&quot;highlighter-rouge&quot;&gt;ln -s src targ&lt;/code&gt; for soft links
+    &lt;ul&gt;
+      &lt;li&gt;soft link: symbolic link: a &lt;strong&gt;new&lt;/strong&gt; file containing indirect reference to source_file, different inode, dual access, usually smaller in size&lt;/li&gt;
+      &lt;li&gt;hard link: two file names, same inode, dual access, same in size&lt;/li&gt;
+      &lt;li&gt;hard copy: two files, two inodes, one-way access, same in size&lt;/li&gt;
+      &lt;li&gt;check link status: &lt;code class=&quot;highlighter-rouge&quot;&gt;ls -li&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;terminal&quot;&gt;Terminal&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;echo: print to terminal (without re-direction)&lt;/li&gt;
+  &lt;li&gt;date&lt;/li&gt;
+  &lt;li&gt;man: display online manual(where)&lt;/li&gt;
+  &lt;li&gt;talk: current user with established mutual connection&lt;/li&gt;
+  &lt;li&gt;write: current user without consent&lt;/li&gt;
+  &lt;li&gt;mail: all users (online/offline), check by typing &lt;code class=&quot;highlighter-rouge&quot;&gt;mail&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Tested Out On MacOS</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll-tricks" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-12-27T00:00:00-08:00</published><updated>2018-12-27T00:00:00-08:00</updated><id>http://localhost:4000/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll-tricks">&lt;h2 id=&quot;what-has-been-done&quot;&gt;What Has Been Done:&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Amazing tutorial about Jekyll and Git Pages @Giraffe Academy &lt;a href=&quot;https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOPV5C5Ay0pHaa0RJFhcmcB&quot;&gt;here&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;page variables @front matter: page.var&lt;/li&gt;
+      &lt;li&gt;site variables @&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;: site.var&lt;/li&gt;
+      &lt;li&gt;when using a theme: include and install -&amp;gt; pre-fixed layouts &amp;amp; includes are available through theme repos&lt;/li&gt;
+      &lt;li&gt;when customizing: local layouts &amp;amp; include will override default setting&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-to-be-done&quot;&gt;What To Be Done:&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Practice Markdown Language &amp;amp; Front-end hot mess&lt;/li&gt;
+  &lt;li&gt;Git and GitHub -&amp;gt; GitPages&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">What Has Been Done: Amazing tutorial about Jekyll and Git Pages @Giraffe Academy here page variables @front matter: page.var site variables @_config.yml: site.var when using a theme: include and install -&amp;gt; pre-fixed layouts &amp;amp; includes are available through theme repos when customizing: local layouts &amp;amp; include will override default setting</summary></entry></feed>
