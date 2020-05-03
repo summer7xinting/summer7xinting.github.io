@@ -16,7 +16,7 @@
 title: STFU
 # email: wangxinting21@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Read The Source Code.
+  Weekly Update Every Sunday @8PM
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
